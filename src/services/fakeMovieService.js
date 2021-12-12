@@ -51,28 +51,28 @@ const movies = [
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller"},
     numberInStock: 7,
     dailyRentalRate: 4.5
-  // },
-  // {
-  //   _id: "5b21ca3eeb7f6fbccd47181f",
-  //   title: "8 Hell Yeah Chubby is One",
-  //   genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
-  //   numberInStock: 8,
-  //   dailyRentalRate: 3.5
-  // },
-  // {
-  //   _id: "5b21ca3eeb7f6fbccd471821",
-  //   title: "9 The kiki",
-  //   genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
-  //   numberInStock: 9,
-  //   dailyRentalRate: 3.5
-  // }
-  // {
-  //   _id: "5b21ca3eeb7f6fbccd47182111",
-  //   title: "10 The qiqi",
-  //   genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
-  //   numberInStock: 10,
-  //   dailyRentalRate: 3.5
-  // },
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd47181f",
+    title: "8 Hell Yeah Chubby is One",
+    genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
+    numberInStock: 8,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd471821",
+    title: "9 The kiki",
+    genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
+    numberInStock: 9,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd47182111",
+    title: "10 The qiqi",
+    genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    numberInStock: 10,
+    dailyRentalRate: 3.5
+  }
   //   {
   //   _id: "5b21ca3eeb7f6fbccd471822222",
   //   title: "11 The Love",

@@ -3,83 +3,83 @@ import * as genresAPI from "./fakeGenreService";
 const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471815",
-    title: "1 Chubby",
+    title: "A Love Story of Kiki & Chubby",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock: 1,
-    dailyRentalRate: 2.5,
+    dailyRentalRate: 1.1,
     publishDate: "2018-01-03T19:04:28.809Z",
     liked:true
   },
   {
     _id: "5b21ca3eeb7f6fbccd471816",
-    title: "2 I Love Chubby",
+    title: "Baby Chubby",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock: 2,
-    dailyRentalRate: 2.5
+    dailyRentalRate: 2.2
   },
   {
     _id: "5b21ca3eeb7f6fbccd471817",
-    title: "3 Chubby is My Cat",
+    title: "Cat Lover",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock:3 ,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 3.3
   },
   {
     _id: "5b21ca3eeb7f6fbccd471819",
-    title: "4 Year Old Baby Cat",
+    title: "David on board",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action"  },
     numberInStock: 4,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 4
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181a",
-    title: "5 Baby Chubby",
+    title: "Electrical Dance",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
     numberInStock:5 ,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 4.1
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181b",
-    title: "6 My Chubby is so Cute",
+    title: "Fishy Fishy",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller"},
     numberInStock: 6,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 4.2
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181e",
-    title: "7 Holly Chubby Qiqi",
+    title: "Girls Party",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller"},
     numberInStock: 7,
-    dailyRentalRate: 4.5
+    dailyRentalRate: 4.3
   },
   {
     _id: "5b21ca3eeb7f6fbccd47181f",
-    title: "8 Hell Yeah Chubby is One",
+    title: "Hell Yeah Chubby is One",
     genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
     numberInStock: 8,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 4.4
   },
   {
     _id: "5b21ca3eeb7f6fbccd471821",
-    title: "9 The kiki",
+    title: "Ice Cream",
     genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
     numberInStock: 9,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 4.5
   },
   {
     _id: "5b21ca3eeb7f6fbccd47182111",
-    title: "10 The qiqi",
+    title: "JSON",
     genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
     numberInStock: 10,
-    dailyRentalRate: 3.5
+    dailyRentalRate: 4.6
+  },
+    {
+    _id: "5b21ca3eeb7f6fbccd471822222",
+    title: "Kiki is moving forward",
+    genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
+    numberInStock: 11,
+    dailyRentalRate: 4.7
   }
-  //   {
-  //   _id: "5b21ca3eeb7f6fbccd471822222",
-  //   title: "11 The Love",
-  //   genre: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy"},
-  //   numberInStock: 11,
-  //   dailyRentalRate: 3.5
-  // },
   // {
   //   _id: "5b21ca3eeb7f6fbccd471823333",
   //   title: "12 The Bae Chubby",

@@ -33,7 +33,8 @@ class TableHead extends React.Component {
               key={column.path || column.key}
               onClick={() => this.raiseSort(column.path)}
             >
-              {column.label} {this.sortIcon(column)}
+              {column.label}
+              {/* {this.sortIcon(column)} */}
             </th>
           ))}
         </tr>

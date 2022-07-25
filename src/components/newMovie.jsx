@@ -6,7 +6,7 @@ class NewMovieForm extends Form {
   state = {
     data: {
       title: "",
-      genreId: "5b21ca3eeb7f6fbccd471818",
+      genreId: "",
       numberInStock: "",
       dailyRentalRate: "",
     },
@@ -27,8 +27,9 @@ class NewMovieForm extends Form {
       .required()
       .label("Daily Rental Rate"),
   };
-  componentDidMount() {
-    const genres = getGenres();
+  async componentDidMount() {
+    const genres = await getGenres();
+    // console.log(genres,'genres?')
     this.setState({ genres });
     //console.log(genres, "fff hi fake genres");
   }

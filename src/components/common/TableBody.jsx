@@ -8,23 +8,6 @@ class TableBody extends React.Component {
     } else {
       return _.get(item, column.path);
     }
-
-    // if (column.path) {
-    //   if (column.path === "title") {
-    //     return (
-    //       <Link
-    //         className="nav-link active"
-    //         aria-current="page"
-    //         to={`/movies/${item._id}`}
-    //       >
-    //         {_.get(item, column.path)}
-    //       </Link>
-    //     );
-    //   }
-    //   return _.get(item, column.path);
-    // } else {
-    //   return column.content(item);
-    // }
   }
 
   render() {

@@ -1,7 +1,5 @@
 import React from "react";
 
-// import "font-awesome/css/font-awesome.css";
-
 import MoviesTable from "./moviesTable";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
@@ -9,9 +7,8 @@ import ListGroup from "./common/listGroup";
 
 import _ from "lodash";
 import { Link } from "react-router-dom";
-
-import { getGenres } from "../services/fakeGenreService";
-import { getMovies, deleteMovie } from "../services/fakeMovieService";
+import { getGenres } from "../services/genreService";
+import { getMovies, deleteMovie } from "../services/movieService";
 
 class Movies extends React.Component {
   state = {
@@ -25,14 +22,14 @@ class Movies extends React.Component {
     searchValue: "",
   };
 
-  componentDidMount() {
-    //const genres = await getGenres(); // this is for call the real server
-    const genres = getGenres();
+  async componentDidMount() {
+    const genres = await getGenres(); 
+    // const genres = getGenres();
 
     this.setState({
-      //movies: await getMovies(), // this is for call the real server
-      movies: getMovies(),
-      genres: [{ _id: "allGenres", name: "All Genres" }, ...genres],
+      movies: await getMovies(), // this is for call the real server
+      // movies: getMovies(),
+      genres: [{ _id: "allGenres", name: "All Genres"},...genres ],
     });
   }
 
@@ -46,13 +43,14 @@ class Movies extends React.Component {
     this.setState({ movies: movieInDb });
 
     try {
-      //await deleteMovie(movie);
-      deleteMovie(movie);
+      await deleteMovie(movie);
+      // deleteMovie(movie);
     } catch (error) {
       if (error.response && error.response.status === 404) {
         alert("sorry, this post has been deletedå");
         this.setState({ movies: originalMovies });
       }
+      this.setState({ movies: originalMovies });
     }
   };
 
@@ -94,10 +92,6 @@ class Movies extends React.Component {
       searchValue,
     } = this.state;
 
-    //
-
-    //
-
     let filterMovies = allMovies;
     if (searchValue) {
       filterMovies = allMovies.filter((movie) =>
@@ -111,14 +105,6 @@ class Movies extends React.Component {
       );
     }
 
-    //
-    //
-
-    // const filterGrenreMovies =
-    //   currentGenre.name === "All Genres"
-    //     ? allMovies
-    //     : allMovies.filter((m) => m.genre.name === currentGenre.name);
-
     const sorted = _.orderBy(filterMovies, sortColumn.path, sortColumn.order);
     const movies = paginate(sorted, currentPage, pageSize);
 
@@ -129,22 +115,21 @@ class Movies extends React.Component {
     //console.log(this.state.movies, "hi movies!!!!");
     const { genres, pageSize, currentPage, currentGenre, sortColumn } =
       this.state;
-
-    // console.log(searchFilterMovie, "hi???");
-
+    const {user} = this.props
     const result = this.getPagedData();
 
+    // console.log(user,'user from props?')
     return (
-      <div className="d-flex flex-row m-3">
-        <div className="m-3 col-2">
+      <div className="d-flex flex-row mt-4">
+        <div className="m-2 col-2">
           <ListGroup
             items={genres}
             onItemChange={this.onGenreChange}
             currentItem={currentGenre}
           />
         </div>
-        <div className="m-3 col">
-          <div>
+        <div className="m-2 col">
+         { user&&<div>
             <button type="button" className="btn btn-primary">
               <Link
                 to="/movies/new"
@@ -153,11 +138,9 @@ class Movies extends React.Component {
                 New Movies
               </Link>
             </button>
-          </div>
+          </div>}
 
           <p>Showing {result.totalCount} movies in the database.</p>
-          {/* <div>{this.handleMessage(result.totalCount)}</div> */}
-          {/* <div>{`There are ${result.totalCount} movies on your list`}</div> */}
 
           <div className="searchbox">
             <form className="d-flex">
@@ -178,6 +161,7 @@ class Movies extends React.Component {
             onDelete={this.handleDelete}
             onSort={this.handleSort}
             sortColumn={sortColumn}
+   
           />
           <Pagination
             itemCount={result.totalCount}

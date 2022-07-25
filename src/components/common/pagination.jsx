@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import { PropTypes } from "prop-types";
+// import { Link } from "react-router-dom";
 class Pagination extends React.Component {
   render() {
     const { itemCount, pageSize, onPaginationChange, currentPage } = this.props;
@@ -20,6 +21,7 @@ class Pagination extends React.Component {
               onClick={() => onPaginationChange(page)}
             >
               <a className="page-link">{page}</a>
+              
             </li>
           ))}
         </ul>

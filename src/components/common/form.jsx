@@ -9,11 +9,10 @@ class Form extends React.Component {
     genres: [],
   };
   validation = () => {
-    //console.log("validation(),work??");
+
     const { data } = this.state;
     const errors = {};
     const result = Joi.validate(data, this.schema, { abortEarly: false });
-    //console.log(result, "hi joi result");
     if (!result.error) {
       return null;
     }
@@ -21,20 +20,8 @@ class Form extends React.Component {
       errors[item.path[0]] = item.message;
     }
 
-    //console.log(errors, "hi hi hi");
     return errors;
 
-    // //
-
-    // //
-    // if (account.username.trim() === "") {
-    //   errors.username = "username should not  be empty";
-    // }
-    // if (account.password.trim() === "") {
-    //   errors.password = "password should not be empty";
-    // }
-    // //console.log(Object.keys(errors).length, "l");
-    // return Object.keys(errors).length === 0 ? null : errors;
   };
 
   validationProperty = (currentTarget) => {
@@ -47,25 +34,12 @@ class Form extends React.Component {
       return result.error.details[0].message;
     }
 
-    // if (currentTarget.name === "username") {
-    //   if (currentTarget.value.trim() === "") {
-    //     return "username should not be empty";
-    //   }
-    // } else if (currentTarget.name === "password") {
-    //   if (currentTarget.value.trim() === "") {
-    //     return "password should not be empty";
-    //   }
-    // } else {
-    //   return null;
-    // }
   };
 
   handleSubmit = (e) => {
-    //console.log("submit,work??");
     e.preventDefault();
 
     const errors = this.validation();
-    //console.log(errors, "hi error");
     this.setState({ errors: errors || {} });
     if (errors != null) {
       return;
@@ -126,7 +100,7 @@ class Form extends React.Component {
 
   helperButton(label) {
     return (
-      <button disabled={this.validation()} className="btn btn-primary">
+      <button disabled={this.validation()} className="btn btn-primary mt-3">
         {label}
       </button>
     );

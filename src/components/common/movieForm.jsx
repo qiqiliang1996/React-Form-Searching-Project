@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
-import { getGenres } from "../../services/fakeGenreService";
-import { getMovie, saveMovie } from "../../services/fakeMovieService";
+import { getGenres } from "../../services/genreService";
+import { getMovie, saveMovie } from "../../services/movieService";
 import Form from "./form";
 
 //
@@ -33,27 +33,25 @@ class MovieForm extends Form {
       .label("Daily Rental Rate"),
   };
 
-  polupateGenres() {
-    //const genres = await getGenres(); //for real server
+  async polupateGenres() {
+    const genres = await getGenres(); //for real server
 
-    const genres = getGenres();
+    // const genres = getGenres();
     this.setState({ genres });
   }
 
-  populateMovie() {
+  async populateMovie() {
     const movieId = this.props.match.params.id;
     if (movieId === "new") {
       return;
     }
 
     try {
-      //const movie = await getMovie(movieId); //for real server
-
-      const movie = getMovie(movieId);
-      //console.log(movie, "222");
+      const movie = await getMovie(movieId); //for real server
       const data = this.mapMovieToView(movie);
       this.setState({ data });
     } catch (error) {
+      console.log('error from not found movieId ',error.response.status)
       if (error.response && error.response.status === 404) {
         this.props.history.replace("/notFound");
       }
@@ -88,9 +86,9 @@ class MovieForm extends Form {
 
   //
 
-  doSubmit() {
-    //const result = await saveMovie(this.state.data);  // real server call
-    const result = saveMovie(this.state.data);
+  async doSubmit() {
+     await saveMovie(this.state.data);  // real server call
+    // saveMovie(this.state.data);
     this.props.history.push("/movies");
     console.log("submited");
   }

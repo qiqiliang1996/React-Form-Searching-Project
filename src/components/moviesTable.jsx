@@ -2,6 +2,7 @@ import Like from "./common/like";
 import React from "react";
 import Table from "./common/table";
 import { Link } from "react-router-dom";
+// import {getCurrentUserFromLocalStorage} from '../services/authService'
 
 class MoviesTable extends React.Component {
   columns = [
@@ -38,7 +39,8 @@ class MoviesTable extends React.Component {
           Delete
         </button>
       ),
-    },
+    } 
+    
   ];
   render() {
     const { movies, sortColumn, onSort } = this.props;

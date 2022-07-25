@@ -11,6 +11,7 @@ class MoviesTable extends React.Component {
       label: "Title",
       content: (movie) => (
         <Link
+        style={{color:'#0C6EFD'}}
           className="nav-link active"
           aria-current="page"
           to={`/movies/${movie._id}`}

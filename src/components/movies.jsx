@@ -50,6 +50,8 @@ class Movies extends React.Component {
         alert("sorry, this post has been deletedå");
         this.setState({ movies: originalMovies });
       }
+      console.log(error.response,'there is error when you try to delete')
+      console.log(error.response.status,'error code')
       this.setState({ movies: originalMovies });
     }
   };
